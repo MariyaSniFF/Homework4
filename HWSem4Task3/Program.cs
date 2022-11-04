@@ -1,9 +1,23 @@
 ﻿// Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
-int[] Array = new int[8];
 
-for (int i = 0; i < 8; i++)
+
+int[]GetRandomArray(int size , int begin, int last)
 {
-    Array[i] = new Random().Next(0,9);
-    Console.Write(Array[i]);
+    int[] arr = new int[size];
+   Random random= new Random();
+    for (int i = 0; i < size; i++)
+    {
+    arr[i]= random.Next(begin, last+1);
+   }
+   return arr;
 }
-Console.WriteLine();
+
+void PrintArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        System.Console.Write(arr[i] + " ");
+    }
+}
+int[] array = GetRandomArray(8, 0, 100);
+ PrintArray(array);
